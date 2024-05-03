@@ -14,22 +14,26 @@ const onButtonPress = () => {
     <Text style={[styles.text, styles.selectedText]} >green</Text>
     <Text style={styles.text} >blue</Text>
     
-      <ActivityIndicator size="large" color={"#61DBFB"} />
-      <Button title="click me"  onPress={onButtonPress} onButtonPress />
-    <Text>OS: {Platform.OS}</Text>
-    <Text>Height: {height}</Text>
-    <Text>Width: {width}</Text>
-    <Text>Snack.expo.dev</Text>
+      {/* <ActivityIndicator size="large" color={"#61DBFB"} /> */}
+      {/* <Button title="click me"  onPress={onButtonPress} onButtonPress /> */}
+    {/* <Text>OS: {Platform.OS}</Text> */}
+    {/* <Text>Height: {height}</Text> */}
+    {/* <Text>Width: {width}</Text> */}
+    {/* <Text>Snack.expo.dev</Text> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   page: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
     marginTop: 40,
     backgroundColor: "#DDD",
   },
   text: {
+    textAlign:"center",
     fontSize: 22,
     color: "red",
     backgroundColor: "yellow",
