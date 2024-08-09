@@ -4,6 +4,23 @@ import { Text, View, StyleSheet, TouchableHighlight } from "react-native";
 
 // const { height, width } = Dimensions.get('window');
 
+function ColorButton({backgroundColor, onPress = f => f }) {
+  return (
+<TouchableHighlight 
+      style={styles.button}
+      onPress={() => onPress(backgroundColor)}
+        underlayColor="orange"
+        >
+        
+        <View style={styles.row}>
+          <View style={[styles.sample, { backgroundColor: backgroundColor }]} />
+          <Text style={styles.buttonText}>{backgroundColor}</Text>
+        </View>
+
+      </TouchableHighlight>
+  )
+}
+
 export default function App() {
 // const onButtonPress = () => {
 //   console.log(`${new Date().toLocaleTimeString()} button press`);
@@ -14,18 +31,11 @@ export default function App() {
   return (
     
     <View style={[styles.container, { backgroundColor }]}>
-      <TouchableHighlight 
-      style={styles.button}
-      onPress={() => setBackgroundColor("yellow")}
-        underlayColor="orange"
-        >
-        
-        <View style={styles.row}>
-          <View style={[styles.sample, { backgroundColor: "yellow" }]} />
-          <Text style={styles.buttonText}>yellow</Text>
-        </View>
-
-      </TouchableHighlight>
+      <ColorButton backgroundColor="red" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="green" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="blue" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="yellow" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="purple" onPress={setBackgroundColor}/>
     {/* <Text style={styles.button} onPress={() => setBackgroundColor("green")} >green</Text> */}
     {/* <Text style={styles.button} onPress={() => setBackgroundColor("red")} >red</Text> */}
     
