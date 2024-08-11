@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { View, StyleSheet } from "react-native";
 import ColorButton from "./components/ColorButton";
+import defaultColors from "./data/defaultColors.json" 
 
 // const { height, width } = Dimensions.get('window');
 
