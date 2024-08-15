@@ -1,6 +1,6 @@
 import React from "react";
 import ColorList from "./components/ColorList";
-import ColorDetails from "./components/ColorDetails";
+import ColorDetails from "./components/ColorDetails.js";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 

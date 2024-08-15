@@ -3,7 +3,7 @@ import { StyleSheet, FlatList } from "react-native";
 import ColorButton from "./ColorButton";
 // import defaultColors from "./data/defaultColors.json" 
 import ColorForm from "./ColorForm";
-import { useColors } from "./hooks";
+import { useColors } from "../hooks";
 
 // const { height, width } = Dimensions.get('window');
 
