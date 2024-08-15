@@ -14,7 +14,6 @@ export const useColors = () => {
         }
     }
 
-
     //Save Colors when colors array changes
     useEffect(() => {
         AsyncStorage.setItem("@ColorListStore:Colors", JSON.stringify(colors))
