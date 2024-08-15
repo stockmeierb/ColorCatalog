@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import { StyleSheet, FlatList } from "react-native";
-import ColorButton from "./components/ColorButton";
+import ColorButton from "./ColorButton";
 // import defaultColors from "./data/defaultColors.json" 
-import ColorForm from "./components/ColorForm";
+import ColorForm from "./ColorForm";
 import { useColors } from "./hooks";
 
 // const { height, width } = Dimensions.get('window');
 
-export default function App() {
+export default function ColorList() {
 // const onButtonPress = () => {
 //   console.log(`${new Date().toLocaleTimeString()} button press`);
 //   Alert.alert(`${new Date().toLocaleTimeString()} button press`);
