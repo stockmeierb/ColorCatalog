@@ -7,7 +7,7 @@ import { useColors } from "../hooks";
 
 // const { height, width } = Dimensions.get('window');
 
-export default function ColorList() {
+export default function ColorList({navigation}) {
 // const onButtonPress = () => {
 //   console.log(`${new Date().toLocaleTimeString()} button press`);
 //   Alert.alert(`${new Date().toLocaleTimeString()} button press`);
@@ -20,11 +20,16 @@ export default function ColorList() {
     <ColorForm 
     onNewColor={addColor}
     />
-    <FlatList style={[styles.container, { backgroundColor }]}
+    <FlatList style={[styles.container]}
       data={colors}
       renderItem={({ item }) => {
         return (
-          <ColorButton key={item.id} backgroundColor={item.color} onPress={setBackgroundColor} />
+          <ColorButton 
+          key={item.id} 
+          backgroundColor={item.color} 
+          onPress={() => navigation.navigate("Details")} 
+        //   onPress={setBackgroundColor} 
+          />
         );
       } } /></>    
   );
