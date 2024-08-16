@@ -1,10 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Color from "color";
 
 export default function ColorDetails({ route }) {
+  const { color: name } =  route.params;
+  const color = Color(name);
+  const textColor = {fontSize: 30, color: color.negate(name).toString()};
 return (
-    <View style={styles.container}>
-    <Text>Color Details: {route.params.color}</Text>
+    <View style={[styles.container, {backgroundColor: name}]}>
+    <Text style={textColor}>Name: {name} </Text>
+    <Text style={textColor}>RGB: {color.rgb().toString()} </Text>
+    <Text style={textColor}>HSL: {color.hsl().toString()} </Text>
+    <Text style={textColor}>Luminosity: {color.luminosity().toString()} </Text>
     </View>
   );
 }
