@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, StyleSheet, ScrollView, Image } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, ScrollView, Image, ActivityIndicator, RefreshControl } from 'react-native';
 import React, {useState, useEffect} from 'react';
 // You can import supported modules from npm
 import { Card } from 'react-native-paper';
@@ -8,22 +8,28 @@ import AssetExample from './components/AssetExample';
 
 export default function App() {
   const [pet, setPet] = useState();
+  const [loading, setLoading] = useState(false);
+
   
 
 const loadPet = async () => {
+  setLoading(true);
   const res = await fetch("http://pet-library.moonhighway.com/api/randomPet");
   const data = await res.json();
+  await Image.prefetch(data.photo.full)
 setPet(data);
+setLoading(false);
 }
 
 useEffect(() => {
   loadPet();
   }, []);
 
-if (!pet) return null;
+if (!pet) return <ActivityIndicator size="large" />;
   return(
     <SafeAreaView style={styles.container}>
-    <ScrollView>
+    <ScrollView
+    refreshControl={<RefreshControl refreshing={loading} onRefresh={loadPet} />}>
     <Image style={styles.pic} source={{uri: pet.photo.full }} />
     <Text style= {styles.paragraph}> {pet.name} - {pet.category}</Text>
     </ScrollView>
