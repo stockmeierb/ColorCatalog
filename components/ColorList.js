@@ -27,7 +27,7 @@ export default function ColorList({navigation}) {
           <ColorButton 
           key={item.id} 
           backgroundColor={item.color} 
-          onPress={() => navigation.navigate("Details")} 
+          onPress={() => navigation.navigate("Details", { color: item.color })} 
         //   onPress={setBackgroundColor} 
           />
         );
